@@ -1,0 +1,101 @@
+
+@import "../../app.scss";
+.navbar {
+  height: 100px;
+  display: flex;
+  align-items: center;
+
+  .wrapper {
+    max-width: 1366px;
+    margin: auto;
+    padding-left: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; // Changed to space-between to align text and social icons on opposite ends
+    height: 100%;
+    width: 100%;
+
+    @include tablet {
+      justify-content: flex-end;
+      padding: 20px;
+    }
+
+    @include mobile {
+      justify-content: center;
+      padding: 10px;
+      flex-direction: column; // Stack elements vertically on mobile
+      gap: 10px; // Space between elements on mobile
+    }
+
+    span {
+      font-weight: bold;
+      margin-left: 20px; // Space between sidebar and text
+      @include tablet{
+        display: none;
+      }
+      @include mobile{
+        display: none;
+      }
+    }
+
+    .social-icon {
+      display: inline-block;
+
+      @include mobile {
+        margin-top: 10px; // Add space above social icons on mobile
+      }
+    }
+
+    .social-icon a {
+      width: 42px;
+      height: 42px;
+      background: rgba(217, 217, 217, 0.1);
+      display: inline-flex;
+      border-radius: 50%;
+      margin-right: 6px;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+
+      @include mobile {
+        width: 36px;
+        height: 36px;
+      }
+    }
+
+    .social-icon a::before {
+      content: "";
+      width: 42px;
+      height: 42px;
+      position: absolute;
+      background-color: #ffffff;
+      border-radius: 50%;
+      transform: scale(0);
+      transition: 0.3s ease-in-out;
+
+      @include mobile {
+        width: 36px;
+        height: 36px;
+      }
+    }
+
+    .social-icon a:hover::before {
+      transform: scale(1);
+    }
+
+    .social-icon a img {
+      width: 40%;
+      z-index: 1;
+      transition: 0.3s ease-in-out;
+
+      @include mobile {
+        width: 35%;
+      }
+    }
+
+    .social-icon a:hover img {
+      filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%) hue-rotate(346deg) brightness(95%) contrast(86%);
+    }
+  }
+}

@@ -1,0 +1,216 @@
+@import "../../app.scss";
+
+.services {
+  background: linear-gradient(180deg, #0c0c1d, #111132);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 50px 20px; /* Added padding for spacing */
+
+  .textContainer {
+    flex: 1;
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    @include tablet {
+      align-self: center;
+      text-align: center;
+      flex-direction: column;
+    }
+
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    p {
+      font-weight: 200;
+      font-size: 20px;
+      color: gray;
+      text-align: right;
+
+      @include mobile {
+        font-size: 16px;
+        text-align: center; /* Center-align text for mobile */
+      }
+    }
+
+    hr {
+      width: 500px;
+      border: none;
+      border-top: 0.5px solid gray;
+
+      @include tablet {
+        width: 400px;
+      }
+
+      @include mobile {
+        width: 300px;
+      }
+    }
+  }
+
+  .titleContainer {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include tablet {
+      width: 100%;
+    }
+
+    @include mobile {
+      width: 100%;
+    }
+
+    .title {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+
+       @include tablet {
+        h1{
+        text-align: end;
+       }
+     
+        }
+       
+
+      @include mobile {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+      }
+
+      img {
+        width: 300px;
+        height: 100px;
+        border-radius: 50px;
+        object-fit: cover;
+
+        @include tablet {
+          width: 250px;
+          height: 80px;
+        }
+
+        @include mobile {
+          width: 200px;
+          height: 50px;
+        }
+      }
+
+      h1 {
+        font-size: 96px;
+        font-weight: 100;
+
+        @include tablet {
+          font-size: 64px;
+        }
+
+        @include mobile {
+          font-size: 36px;
+        }
+      }
+
+      button {
+        width: 300px;
+        height: 100px;
+        border-radius: 50px;
+        background-color: orange;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+
+        @include tablet {
+          font-size: 18px;
+          width: 250px;
+          height: 80px;
+        }
+
+        @include mobile {
+          font-size: 16px;
+          width: 150px;
+          height: 50px;
+        }
+      }
+    }
+  }
+
+  .listContainer {
+    // Ensure the skill section takes full width
+    width: 100%; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    padding: 0 20px; // Optional padding for smaller screens
+  
+    .skill {
+      width: 100%; // Ensure it takes the full width
+      padding: 20px 0; // Added padding at the top and bottom
+      position: relative;
+      text-align: center; // Center-align text for better visibility
+  
+      
+    }
+  
+    .skill-slider {
+    width: 80%;
+    margin:0 auto;
+    position: relative;
+    z-index: 2;
+
+
+      .box {
+        flex: 1;
+        padding: 50px;
+        border: 0.5px solid gray;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 10px;
+       
+        @include mobile {
+          border: none;
+          align-items: center;
+          gap: 20px;
+          padding: 10px;
+        }
+       
+        p {
+          @include mobile {
+            display: none;
+          }
+         
+        }
+  
+        button {
+          padding: 10px;
+          background-color: orange;
+          border: none;
+          cursor: pointer;
+  
+          @include mobile {
+            background-color: transparent;
+            border: 1px solid orange;
+            border-radius: 5px;
+            color: orange;
+            width: 50%;
+            padding: 5px;
+            height: 50%;
+          }
+        }
+      }
+
+
+      
+  
+   
+  }
+}
+  
+}

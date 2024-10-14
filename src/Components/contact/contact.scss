@@ -1,0 +1,153 @@
+@import "../../app.scss";
+.contact {
+  height: 100%;
+  max-width: 1366px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  position: relative; // Add this to allow positioning children relative to the container
+
+  @include tablet {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  @include mobile {
+    padding: 10px;
+    gap: 20px;
+  }
+
+  .textContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include tablet {
+      width: 100%;
+      gap: 20px;
+      text-align: center;
+      align-items: center;
+      margin-top: 50px;
+    }
+
+    @include mobile {
+      margin-top: 30px;
+      gap: 15px;
+    }
+
+    h1 {
+      font-size: 100px;
+      line-height: 88px;
+
+      @include tablet {
+        font-size: 48px;
+        line-height: 44px;
+      }
+
+      @include mobile {
+        font-size: 32px;
+        line-height: 36px;
+      }
+    }
+
+    span {
+      font-weight: 300;
+
+      @include mobile {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .formContainer {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include tablet {
+      padding: 30px;
+      width: 100%;
+    }
+
+    @include mobile {
+      padding: 20px;
+    }
+
+    .phoneSvg {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute; // Change to absolute positioning to overlap with the form
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      stroke: orange;
+      z-index: -1; // Ensure the SVG is behind the form
+
+      .svgImg {
+        max-width: 100%;
+        height: auto;
+        width: 450px;
+
+        @include tablet {
+          width: 350px;
+        }
+
+        @include mobile {
+          width: 250px; 
+        }
+      }
+    }
+
+    form {
+      position: relative; // To ensure that the form is on top of the SVG
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+      z-index: 1; // Ensure the form appears above the SVG
+
+      input,
+      textarea {
+        padding: 20px;
+        background-color: transparent;
+        border: 1px solid white;
+        color: white;
+        border-radius: 5px;
+
+        @include tablet {
+          padding: 15px;
+        }
+
+        @include mobile {
+          padding: 10px;
+        }
+      }
+
+      button {
+        padding: 20px;
+        border: none;
+        background-color: orange;
+        cursor: pointer;
+        font-weight: 500;
+
+        @include tablet {
+          padding: 15px;
+        }
+
+        @include mobile {
+          padding: 10px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,168 @@
+
+@import "../../app.scss";
+
+.hero {
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(180deg, #0c0c1d, #111132);
+  position: relative;
+
+  .wrapper {
+    max-width: 1366px;
+    height: 100%;
+    margin: auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+
+    .textContainer {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 40px;
+      
+      @include tablet {
+        width: 100%;
+        height: 40%; /* Reduce height for text to make space for the image */
+        gap: 20px;
+        align-items: center;
+        text-align: center;
+      }
+
+      @include mobile {
+        width: 100%;
+        height: 30%; /* Further reduce height for mobile */
+        gap: 5px; /* Minimize gap on mobile */
+        padding: 0 10px;
+      }
+
+      // .scrollImg {
+      //   @include tablet {
+      //     display: none;
+      //   }
+      // }
+      
+
+      h2 {
+        font-size: 30px;
+        color: rebeccapurple;
+        letter-spacing: 10px;
+
+        @include tablet {
+          font-size: 24px;
+          letter-spacing: 5px;
+        }
+
+        @include mobile {
+          font-size: 18px;
+          letter-spacing: 2px;
+        }
+      }
+
+      h1 {
+        font-size: 88px;
+
+        @include tablet {
+          font-size: 48px;
+        }
+
+        @include mobile {
+          font-size: 32px; /* Smaller font size for better fit */
+        }
+      }
+
+      .buttons {
+        button {
+          padding: 15px;
+          border: 1px solid white;
+          border-radius: 10px;
+          background-color: transparent;
+          color: white;
+          margin-right: 10px;
+          cursor: pointer;
+          font-weight: 300;
+          z-index: 5;
+         
+
+          @include mobile {
+            padding: 10px;
+            font-size: 12px;
+          }
+        }
+      }
+
+      img {
+        width: 50px;
+        z-index: 100;
+        @include mobile {
+          width: 30px;
+        }
+      }
+    }
+  }
+
+  .imageContainer {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    @include tablet {
+      height: 60%; /* Increased height for the image on tablet */
+      width: 100%;
+      top: unset;
+      bottom: 0;
+    }
+
+    @include mobile {
+      height: 70%; /* Increased height for the image on mobile */
+      width: 100%;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      @include tablet {
+        height: 100%;
+        width: 100%;
+        object-fit: cover; /* Ensure the image fills the container */
+      }
+
+      @include mobile {
+        height: 100%;
+        width: 100%;
+        object-fit: cover; /* Ensure the image fills the container on mobile */
+      }
+      @include desktop {
+        height: 100%;
+        width: 100%;
+        object-fit: cover; /* Ensure the image fills the container on mobile */
+      }
+    }
+    
+  }
+
+  .slidingTextContainer {
+    position: absolute;
+    font-size: 50vh;
+    bottom: -120px;
+    white-space: nowrap;
+    color: #ffffff09;
+    width: 50%;
+    font-weight: bold;
+
+    @include tablet {
+      font-size: 25vh;
+      bottom: -60px;
+    }
+
+    @include mobile {
+      font-size: 20vh; /* Slightly reduced font size */
+      bottom: -40px;
+    }
+  }
+}
