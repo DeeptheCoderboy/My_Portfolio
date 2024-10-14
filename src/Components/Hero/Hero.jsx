@@ -72,7 +72,7 @@ const Hero = () => {
         initial="initial"
         animate="animate"
       >
-        Writer Content Creator Influencer
+      I am a B.tech Engineer
       </motion.div>
       <div className="imageContainer">
         <img src="/me-header.png" alt="" />
